@@ -1,0 +1,31 @@
+.p-float-label{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+#fbox1{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 450px;
+}
+#fbox{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+}
+#disabled-input{
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    opacity: 80;
+}
+#buttonas{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    
+}

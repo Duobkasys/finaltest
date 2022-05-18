@@ -1,0 +1,33 @@
+
+body {
+    background-color: rgb(240, 240, 240);
+}
+header {
+    background-color: rgb(61, 107, 206);
+    text-align: center;
+    font-size: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+}
+#spacer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(240, 240, 240);
+}
+#fi{
+    background-color: rgb(255, 195, 105);
+}
+#kazkas1{
+    margin: 0 auto;
+    width: 70%;
+    border-radius: 25px;
+    background: #e1e1e1;
+    padding: 20px;
+}
+#kazkas{
+    display:flex;
+    width: max-content;
+    align-content: center;
+    margin: 0 auto;
+}

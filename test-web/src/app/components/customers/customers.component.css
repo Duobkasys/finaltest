@@ -1,0 +1,14 @@
+#tarkim{
+    display: flex;
+    align-content: center;
+    
+    }
+#desine{
+    margin-left: 730px;
+}
+#kazkas{
+    border-radius: 15px;
+    background: #f8f8f8;
+    padding: 20px;
+    margin: 0;
+}

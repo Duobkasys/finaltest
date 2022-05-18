@@ -1,0 +1,54 @@
+<div *ngIf="viewOnly; else elseBlock">
+    <p-dialog (onHide)="afterHide()" header="Customer information" [(visible)]="displayBasic" [style]="{width: '24vw'}">
+        <div id="fbox">
+        <div id="preview">
+        <label for="disabled-input" class="block">Name:</label>
+        <input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="cust.name" />
+        </div>
+        <div id ="preview">
+        <label for="disabled-input" class="block">Surname:</label>
+        <input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="cust.surname" />
+        </div>
+        <div id ="preview">
+        <label for="disabled-input" class="block">Telnum:</label>
+        <input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="cust.telnum" />
+        </div>
+        <div id ="preview">
+        <label for="disabled-input" class="block">Email:</label>
+        <input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="cust.email" />
+        </div>
+        <div id ="preview">
+        <label for="disabled-input" class="block">Birth Date:</label>
+        <input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="cust.birthdate" />
+        </div>
+        <p-button id="buttonas" label="Done" icon="pi pi-check" styleClass="p-button-sm" (click)="displayBasic=false; afterHide()" cdkFocusInitial></p-button>
+    </div>
+</p-dialog></div>
+
+<ng-template #elseBlock>
+<p-dialog (onHide)="afterHide()" header="Add new customer" [(visible)]="displayBasic" [style]="{width: '24vw'}">
+    <div id="fbox1">
+    <span class="p-float-label">
+        <input type="text" pInputText [(ngModel)]="customerForm.name"/>
+        <label for="float-input">Name</label>
+    </span>
+    <span class="p-float-label">
+        <input type="text" pInputText [(ngModel)]="customerForm.surname"/>
+        <label for="float-input">Surname</label>
+    </span>
+    <span class="p-float-label">
+        <input type="text" pInputText [(ngModel)]="customerForm.telnum"/>
+        <label for="float-input">Telnum</label>
+    </span>
+    <span class="p-float-label">
+        <input type="text" pInputText [(ngModel)]="customerForm.email"/>
+        <label for="float-input">Email</label>
+    </span>
+    <span class="p-float-label">
+        <input type="text" pInputText [(ngModel)]="customerForm.birthdate"/>
+        <label for="float-input">Birth Date</label>
+    </span>
+            <p-button id="buttonas" label="Add" icon="pi pi-plus" styleClass="p-button-sm" (click)="addNewCust(); displayBasic=false; afterHide()" cdkFocusInitial></p-button>
+    </div>
+        </p-dialog>
+</ng-template>

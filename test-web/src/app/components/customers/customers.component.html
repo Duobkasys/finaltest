@@ -1,0 +1,55 @@
+
+<div id="kazkas" class="card">
+    <p-table #dt1 [value]="customer" [paginator]="true" selectionMode="single" [(selection)]="selectedProduct1" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
+        currentPageReportTemplate="{first} - {last} of {totalRecords} customers" [rowsPerPageOptions]="[10,20,30]" [globalFilterFields]="['name','surname','telnum','email','id']">
+        <ng-template pTemplate="caption">
+            <div class="flex">
+                <span class="p-input-icon-left ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')" placeholder="Search keyword" />
+                </span>
+                <button id="desine" pButton pRipple (click)="openDialog()" type="button" icon="pi pi-plus" label="Add" class="p-button-rounded"></button>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="id">ID
+                    <p-sortIcon field="id"></p-sortIcon>
+                </th>
+                <th pSortableColumn="name">Name
+                    <p-sortIcon field="name"></p-sortIcon>
+                </th>
+                <th pSortableColumn="surname">Surname
+                    <p-sortIcon field="surname"></p-sortIcon>
+                </th>
+                <th pSortableColumn="telnum">Telnum
+                    <p-sortIcon field="telnum"></p-sortIcon>
+                </th>
+                <th pSortableColumn="email">Email
+                    <p-sortIcon field="email"></p-sortIcon>
+                </th>
+                <th pSortableColumn="birthdate">Birth Date
+                    <p-sortIcon field="birthdate"></p-sortIcon>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-customer>
+            <tr [pSelectableRow]="customer" (click)="viewonly()">
+                <td>{{customer.id}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.surname}}</td>
+                <td>{{customer.telnum}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.birthdate}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+
+<ng-template [ngIf]="disp">
+    <app-pop-up-dialog id="tarkim" [displayBasic] = "disp" (visibleChange)=" update();closeDia();"></app-pop-up-dialog>
+</ng-template>
+<ng-template [ngIf]="view">
+    <app-pop-up-dialog id="tarkim" [displayBasic] = "view" (visibleChange)=" update();closeDia();" [viewOnly] = "view" [cust] = "selectedProduct1"></app-pop-up-dialog>
+</ng-template>
